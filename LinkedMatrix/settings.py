@@ -27,7 +27,7 @@ SECRET_KEY = '0mnb8@0oytigdznz=afbv!u+0o8man-8uljg-s1(a))k!^2p&3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -49,8 +49,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'myTask.middleware1.GetIpAddress',
-    'myTask.middleware2.CountIpAddress',
+    'myTask.getIpMiddleware.GetIpAddress',
+    'myTask.countIpMiddleware.CountIpAddress',
 ]
 
 ROOT_URLCONF = 'LinkedMatrix.urls'

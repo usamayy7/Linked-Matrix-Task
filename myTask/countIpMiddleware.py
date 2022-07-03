@@ -22,10 +22,7 @@ class CountIpAddress(object):
             limit=10
         else:
             limit=1
-
-        
-        
-        
+            
         if ip not in cache:
             cache.set(ip,limit,timeout=60)
             return response
