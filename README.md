@@ -1,6 +1,6 @@
 # My Task Explanation
 ## 1. Make Simple Django App:
-First of all we created a simple django app which shows us a heading of **Welcome to Linked Matrix**. In templates folder we created a *home.html* filw which simply resulted in the app page.
+First of all we created a simple django app which shows us a heading of **Welcome to Linked Matrix**. In templates folder we created a *home.html* file which simply resulted in the app page.
 
 ## 2.Configuring Python Logging:
 Secondly, I learnt how to configure python loging in django app. As it is required in a task to show time and IP address of the user in debug.log file. So in formatters I describe the format of our message i.e;{asctime} {message}.
