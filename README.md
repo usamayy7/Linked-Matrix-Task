@@ -112,11 +112,14 @@ Then I write all the dependencies of my django app with this following command:
 So in requirements.txt file all the dependencies of my django app will be written automatically.
 Then I made **Dockerfile** in which I wrote instructions for **Docker Image**.
 Docker Image is created with this following command:
-> docker build --tag python-django .
-> 
+```
+docker build --tag python-django .
+``` 
 Docker image is a template for making **Docker Container**
 Docker container is created with this command:
-> docker run --publish 8000:8000 python-django
+```
+docker run --publish 8000:8000 python-django
+```
 So docker image and docker container is made in docker-desktop but somehow docker container is not working. I configured the Docker correctlty but it is showing the error of Redis-port. 
 **Thank you for reading and I hope I am able to comprehend my task.**
 Regards:
