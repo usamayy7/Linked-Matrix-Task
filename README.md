@@ -84,7 +84,22 @@ Gold user will access the website 10 times per minute.
 Silver user will access the website 5 times per minute.
 Bronze user will access the website 2 times per minute.
 **LOGIC:** For example when a gold user comes to the website the variable named **limit** will initialize to its maximum value i.e, 10 in this case.Then when the gold user will visit again the value will decrease to 9 and so on.So when gold user visits  10 times, he will have to wait for 1 minute until the cache will be restored.
-```ip = request.META['REMOTE_ADDR']
+```
+from django.http import HttpResponseForbidden
+from django.core.cache import cache
+
+class CountIpAddress(object):
+    def __init__(self,get_response):
+        self.get_response = get_response
+
+    def __call__(self,request):
+        response = self.get_response(request)
+        
+        bronze={}
+        silver={}
+        gold={'127.0.0.1'}
+
+        ip = request.META['REMOTE_ADDR']
         
         if ip in bronze:
             limit=2
@@ -103,6 +118,7 @@ Bronze user will access the website 2 times per minute.
             return response
         elif cache.get(ip)==0:
             return HttpResponseForbidden("Please wait for 1 minute to access")
+        
 ```
 **From step 1 to step 6 the code is 100% working**
 ## 7. Dockerize Django App with Dockerfile:
